@@ -1,0 +1,36 @@
+<!-- <p>
+<input type="number" [value]="duration()" (change)="changeDuration($event)">
+
+<p>
+  <input type="text" [value]="message()" (change)="changeMessage($event)">
+</p> -->
+
+
+
+
+<!-- Esto contenido es lo mismo que abajo pero sin el header porque ya esta como layout
+<div class="container mx-auto">
+  <app-header />
+  <div >
+    <h1 class="text-lg font-bold">About</h1>
+    <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel delectus numquam aliquid itaque nulla. Alias fugiat est, voluptatem commodi soluta, ad et eveniet odit rem perferendis porro, quidem iste.</p>
+    -- app-counter solo es un componente que se activava cada cambio en los valores pero ahora solo sirve para correr una funcion  --
+    <p class="text-xs">Numero de clientes  <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 0"/></p>
+    <div>
+      <app-wave-audio audioUrl="assets/audio.mp3" />
+    </div>
+  </div>
+
+</div> -->
+
+<div >
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel delectus numquam aliquid itaque nulla. Alias fugiat est, voluptatem commodi soluta, ad et eveniet odit rem perferendis porro, quidem iste.</p>
+  <!-- -- app-counter solo es un componente que se activava cada cambio en los valores pero ahora solo sirve para correr una funcion  -- -->
+  <p class="text-xs">Numero de clientes  @if (duration() > 0) {
+    <app-counter [duration]="duration()" [message]="message()"/>
+  }</p>
+  <div>
+    <app-wave-audio audioUrl="assets/audio.mp3" />
+  </div>
+</div>

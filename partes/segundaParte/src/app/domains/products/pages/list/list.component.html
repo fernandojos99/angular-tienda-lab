@@ -1,0 +1,22 @@
+<!-- <p>list works!</p>
+
+<div  class ="grid grid-cols-3 gap-4"> gap genera espacio entre cada elemento en un grid
+  <app-product title="Product 1" [price]="12" img="https://picsum.photos/640/640?r=23" (addToCart)="fromChild($event)" />
+  <app-product title="Product 2" [price]="12" img="https://picsum.photos/640/640?r=24" (addToCart)="fromChild($event)" />
+  <app-product title="Product 3" [price]="12" img="https://picsum.photos/640/640?r=25" (addToCart)="fromChild($event)"/>
+  <app-product  title="Product 4" [price]="12" img="https://picsum.photos/640/640?r=26" (addToCart)="fromChild($event)"/>
+</div> -->
+
+<div class="container mx-auto">
+  <!-- <app-header /> -->
+  <div class="grid grid-cols-4 gap-8 mt-5">
+    <!-- En este caso crea varios elementos solo variando sus atributos atraves del ngFor -->
+    @for (product of products(); track product) {
+      <app-product
+        [title]="product.title"
+        [price]="product.price"
+        [img]="product.image"
+        (addToCart)="fromChild($event)" />
+    }
+  </div>
+</div>

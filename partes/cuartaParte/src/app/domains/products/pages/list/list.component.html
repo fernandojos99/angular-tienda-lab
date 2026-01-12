@@ -1,0 +1,36 @@
+<!-- <p>list works!</p>
+
+<div  class ="grid grid-cols-3 gap-4"> gap genera espacio entre cada elemento en un grid
+  <app-product title="Product 1" [price]="12" img="https://picsum.photos/640/640?r=23" (addToCart)="fromChild($event)" />
+  <app-product title="Product 2" [price]="12" img="https://picsum.photos/640/640?r=24" (addToCart)="fromChild($event)" />
+  <app-product title="Product 3" [price]="12" img="https://picsum.photos/640/640?r=25" (addToCart)="fromChild($event)"/>
+  <app-product  title="Product 4" [price]="12" img="https://picsum.photos/640/640?r=26" (addToCart)="fromChild($event)"/>
+</div> -->
+
+<!-- <div class="container mx-auto">
+
+<div class="grid grid-cols-4 gap-8 mt-5">
+  -- En este caso crea varios elementos solo variando sus atributos atraves del ngFor --
+  <app-product
+    *ngFor="let product of products()"
+    [title]="product.title"
+    [price]="product.price"
+    [image]="product.image"
+    (addToCart)="fromChild($event)" />
+</div>
+</div> -->
+
+<!-- para centrar las cosas  -->
+<div class="container mx-auto">
+  <!-- <app-header [cart]="cart()" />    ya no se ocupa porque se ocupa el servicio -->
+  <app-header />
+  <!-- <h3>{{cart().length}}</h3> -->
+  <div class="grid grid-cols-4 gap-8 mt-5">
+    <!--ngFor crea varios elementos por varias el atributo product en app-product -->
+    @for (product of products(); track product) {
+      <app-product
+        [product]="product"
+        (addToCart)="addToCart($event)" />
+    }
+  </div>
+</div>

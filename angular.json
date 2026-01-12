@@ -49,7 +49,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },"src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -80,7 +80,10 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "ssr":false,
+              "prerender": false
+
             }
           },
           "defaultConfiguration": "production"
@@ -112,7 +115,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },"src/assets"
             ],
             "styles": [
               "src/styles.css"
